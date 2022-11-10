@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: danielramirezcounterapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: danielramirezcounterapp
+  template:
+    metadata:
+      labels:
+        app: danielramirezcounterapp 
+    spec:
+      containers:
+        - name: danielramirezcounterapp 
+          image: firsttest2.azurecr.io/danielramirezcounterapp
+          ports:
+          - containerPort: 80
